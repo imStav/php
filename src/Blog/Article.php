@@ -20,13 +20,15 @@
 namespace App\Blog;
 
 use App\Blog\Category;
+use App\Blog\Traits\Categorizable;
 
 class Article
 {
+    use Categorizable;
+
     private $id;
     private $title;
     private $body;
-    private $category;
 
     public function __construct(int $id, string $title, string $body, Category $category)
     {
@@ -80,28 +82,6 @@ class Article
     public function setBody(string $body): self
     {
         $this->body = $body;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of category
-     */ 
-    public function getCategory(): Category
-    {
-        return $this->category;
-    }
-
-    /**
-     * Set the value of category
-     *
-     * @return  self
-     */ 
-    public function setCategory(Category $category): self
-    {
-        $this->category = $category;
-
-        $category->addArticle($this);
 
         return $this;
     }
