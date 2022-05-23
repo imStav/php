@@ -22,7 +22,7 @@ $tags = [
 $articles = [
     new Article(1, 'Lorem', 'Lorem lorem', $categories[0], [$tags[0], $tags[1]]),
     new Article(2, 'Ipsum', 'Ipsum ipsum', $categories[1], [$tags[0], $tags[2]]),
-    new Article(3, 'Sit', 'Sit sit', $categories[1], [$tags[0], $tags[2]]),
+    new Article(3, 'Sit', 'Sit sit', $categories[1], [$tags[2]]),
 ];
 dump($articles);
 
