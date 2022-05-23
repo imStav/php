@@ -2,6 +2,7 @@
 
 Use App\Blog\Article;
 Use App\Blog\Category;
+use App\Blog\Tag;
 
 require __DIR__.'/vendor/autoload.php';
 
@@ -11,6 +12,12 @@ $categories = [
     new Category(3, 'Baz', null),
 ];
 dump($categories);
+
+$tags = [
+    new Tag(1, 'HTML', null),
+    new Tag(2, 'CSS', null),
+    new Tag(3, 'JS', null),
+];
 
 $articles = [
     new Article(1, 'Lorem', 'Lorem lorem', $categories[0]),
