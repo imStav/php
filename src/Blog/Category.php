@@ -14,20 +14,16 @@
 
 namespace App\Blog;
 
+use App\Blog\NamedObject; //optional
 use App\Blog\Article;
 
-class Category
+class Category extends NamedObject
 {
-    private $id;
-    private $name;
-    private $description;
     private $articles;
 
     public function __construct(int $id, string $name, ?string $description, array $articles = [])
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->description = $description;
+        parent:: __construct($id, $name, $description);
         $this->articles = $articles;
 
         // if ($articles) {
@@ -41,54 +37,6 @@ class Category
 
         // fait la même chose que la ligne 37
         //$this->articles = $articles ?? [];
-    }
-
-    /**
-     * Get the value of id
-     */ 
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * Get the value of name
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set the value of name
-     *
-     * @return  self
-     */
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of description
-     */ 
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set the value of description
-     *
-     * @return  self
-     */ 
-    public function setDescription(?string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
     }
 
     /**
