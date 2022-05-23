@@ -42,7 +42,7 @@ class Category extends NamedObject
     /**
      * Get the value of articles
      */ 
-    public function getArticles()
+    public function getArticles(): array
     {
         return $this->articles;
     }
