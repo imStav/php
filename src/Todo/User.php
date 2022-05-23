@@ -10,7 +10,7 @@ class User
     private $email;
     private $password;
 
-    public function __construct(int $id, string $firstname, string $lastname, string $email, $password)
+    public function __construct(int $id, string $firstname, string $lastname, string $email, string $password)
     {
         $this->id = $id;
         $this->firstname = $firstname;
@@ -80,7 +80,7 @@ class User
      *
      * @return  self
      */ 
-    public function setEmail($email)
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 
@@ -90,7 +90,7 @@ class User
     /**
      * Get the value of password
      */ 
-    public function getPassword()
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -100,7 +100,7 @@ class User
      *
      * @return  self
      */ 
-    public function setPassword($password): self
+    public function setPassword(string $password): self
     {
         $this->password = $password;
 
